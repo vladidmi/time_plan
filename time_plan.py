@@ -28,8 +28,12 @@ green = (0,255,0)
 magenta = (255,0,255)
 cyan = (0,255,255)
 
-font = ImageFont.truetype("arial.ttf", 70)
-legend_font = ImageFont.truetype("arial.ttf", 35)
+try:
+    font = ImageFont.truetype("arial.ttf", 70)
+    legend_font = ImageFont.truetype("arial.ttf", 35)
+except:
+    font = ImageFont.truetype( size = 70)
+    legend_font = ImageFont.truetype( size = 35)
 
 bereiche = {
     'T': ((125,551), (1225,533), (1202,916), (177,945)),
