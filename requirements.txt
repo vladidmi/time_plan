@@ -3,5 +3,5 @@ streamlit_folium
 folium
 geopandas
 pandas
-PIL
+Pillow
 holidays
