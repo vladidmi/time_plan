@@ -30,12 +30,10 @@ green = (0,255,0)
 magenta = (255,0,255)
 cyan = (0,255,255)
 
-#try:
-#    font = ImageFont.truetype("arial.ttf", 70)
-#    legend_font = ImageFont.truetype("arial.ttf", 35)
-#except:
-#    font = ImageFont.truetype( font_path, size = 70)
-#    legend_font = ImageFont.truetype( font_path, size = 35)
+font_file = os.path.join(directory, 'arial.ttf')
+
+font = ImageFont.truetype(font_file, 70)
+legend_font = ImageFont.truetype(font_file, 35)
 
 bereiche = {
     'T': ((125,551), (1225,533), (1202,916), (177,945)),
@@ -155,7 +153,7 @@ else:
     
     for colour in legend:
         draw.rectangle(xy= legend[colour][1], fill=legend[colour][0], outline=(0,0,0))
-        draw.text(align_text(legend[colour][1][2:]), colour, fill=(0,0,0))
+        draw.text(align_text(legend[colour][1][2:]), colour, font = legend_font, fill=(0,0,0))
     
     
     for index, row in df[(df.start<=the_date)&(the_date<=df.end)].iterrows():
@@ -174,10 +172,10 @@ else:
             the_colour = cyan
         draw.polygon(bereich, fill =the_colour, outline ="black")
         
-        draw.text(bereich[0], f'OG {str(row.floor)}',  fill=(0,0,0))
+        draw.text(bereich[0], f'OG {str(row.floor)}', font = font, fill=(0,0,0))
         
     
-    draw.text((1600, 1200), str(the_date.strftime('%d.%m.%Y')), fill=(0,0,0))
+    draw.text((1600, 1200), str(the_date.strftime('%d.%m.%Y')), font = font, fill=(0,0,0))
     df1 = df[(df.start<=the_date)&(the_date<=df.end)].drop(columns=['duration', 'before']).astype(str)
     
 st.image(img)
