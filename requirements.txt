@@ -1,0 +1,7 @@
+streamlit
+streamlit_folium
+folium
+geopandas
+pandas
+PIL
+holidays
