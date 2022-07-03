@@ -143,7 +143,7 @@ img = Image.open(os.path.join(directory,'test_flaechenterminplan.jpg'))
 
 if the_date in german_holidays or the_date.weekday()>=5:
     st.write('Feiertag oder Wochenende ausgewaehlt. Bitta ein anderes Datum eingeben')
-    df1 = df.astype(str)
+    df1 = df.drop(columns=['duration', 'before']).astype(str)
 else:
     draw = ImageDraw.Draw(img)
     
@@ -172,7 +172,7 @@ else:
         
     
     draw.text((1600, 1200), str(the_date.strftime('%d.%m.%Y')), font=font, fill=(0,0,0))
-    df1 = df[(df.start<=the_date)&(the_date<=df.end)].astype(str)
+    df1 = df[(df.start<=the_date)&(the_date<=df.end)].drop(columns=['duration', 'before']).astype(str)
     
 st.image(img)
 st.write(df1)
