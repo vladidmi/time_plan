@@ -141,7 +141,7 @@ for house in house_list:
 
 df=pd.DataFrame(time_plan.values(), columns = time_plan[0].keys(), index = time_plan.keys())
 
-the_date = datetime.datetime.combine(st.date_input('Start date', today), datetime.datetime.min.time())
+the_date = datetime.datetime.combine(st.date_input('Datum eingeben', today), datetime.datetime.min.time())
 
 img = Image.open(os.path.join(directory,'test_flaechenterminplan.jpg'))
 
