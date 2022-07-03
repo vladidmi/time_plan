@@ -18,6 +18,8 @@ import streamlit as st
 
 directory = os.getcwd()
 
+font_path = '/System/Library/Fonts/Arial'
+
 def align_text(coordinates):
     return (coordinates[0]+5, coordinates[1]-40)
 
@@ -32,8 +34,8 @@ try:
     font = ImageFont.truetype("arial.ttf", 70)
     legend_font = ImageFont.truetype("arial.ttf", 35)
 except:
-    font = ImageFont.truetype( size = 70)
-    legend_font = ImageFont.truetype( size = 35)
+    font = ImageFont.truetype( font_path, size = 70)
+    legend_font = ImageFont.truetype( font_path, size = 35)
 
 bereiche = {
     'T': ((125,551), (1225,533), (1202,916), (177,945)),
