@@ -76,7 +76,7 @@ slab_framework = 2
 slab_reinforcement = 2
 slab_concrete = 1
 
-start = datetime.datetime.strptime('2022-03-01','%Y-%m-%d')
+start = datetime.datetime.strptime('2023-06-01','%Y-%m-%d')
 
 house_info = namedtuple('House_info', ['house_number','floor'])
 task_info = namedtuple('Task_info',['task_floor_name','duration'])
